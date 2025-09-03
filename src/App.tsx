@@ -2,6 +2,7 @@ import React from "react";
 import Home from "./components/Home";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
+import Projects from "./components/Projects";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
           {/* Left side */}
           <div className="text-2xl font-bold pl-8">PORTFOLIO</div>
 
-          {/* Right side */}
+          {/* Right side */} 
           <div className="space-x-10 text-lg font-medium">
             <a href="#home" className="hover:text-blue-500">Home</a>
             <a href="#skills" className="hover:text-blue-500">Skills</a>
@@ -36,7 +37,8 @@ function App() {
       </section>
 
       <section id="projects" className="min-h-screen flex items-center justify-center bg-gray-50">
-        <h1 className="text-4xl font-bold">Projects</h1>
+        {/* <h1 className="text-4xl font-bold">Projects</h1> */}
+        <Projects />
       </section>
 
       <section id="experience" className="min-h-screen flex items-center justify-center bg-white">
