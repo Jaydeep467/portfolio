@@ -20,12 +20,12 @@ function Contact() {
         "9bKlYLYi56tHhm3Fm" // replace with your EmailJS public key
       )
       .then(
-        (result) => {
+        () => {
           alert("Message sent successfully!");
           setLoading(false);
           formRef.current?.reset();
         },
-        (error) => {
+        () => {
           alert("Failed to send message. Please try again.");
           setLoading(false);
         }
