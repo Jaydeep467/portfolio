@@ -3,6 +3,7 @@ import Home from "./components/Home";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
+import AboutMe from "./components/Aboutme";
 
 function App() {
   return (
@@ -47,7 +48,8 @@ function App() {
       </section>
 
       <section id="about" className="min-h-screen flex items-center justify-center bg-white">
-        <h1 className="text-4xl font-bold">About</h1>
+        {/* <h1 className="text-4xl font-bold">About</h1> */}
+        <AboutMe />
       </section>
 
       <section id="contact" className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4">

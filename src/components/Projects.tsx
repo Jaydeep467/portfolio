@@ -65,25 +65,36 @@ function Projects() {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative bg-white border rounded-xl p-6 shadow-md transition-transform transform hover:-translate-y-2 hover:scale-105 hover:shadow-xl hover:shadow-blue-200 cursor-pointer"
+            className="relative block cursor-pointer"
             initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: index * 0.004 }}
+            transition={{ duration: 1.2, delay: index * 0.2 }}
             viewport={{ once: true }}
           >
-            {/* GitHub Icon */}
-            <div className="absolute top-4 right-4 text-gray-700 text-2xl">
-              <FaGithub />
-            </div>
+            <motion.div
+              className="bg-white border rounded-xl p-6 shadow-md relative h-96 flex flex-col justify-between"
+              whileHover={{
+                scale: 1.1,
+                boxShadow: "0px 0px 25px rgba(59, 130, 246, 0.7)",
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              {/* GitHub Icon */}
+              <div className="absolute top-4 right-4 text-gray-700 text-2xl">
+                <FaGithub />
+              </div>
 
-            <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-            <p className="text-gray-500 mb-4">{project.duration}</p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700">
-              {project.description.map((point, i) => (
-                <li key={i}>{point}</li>
-              ))}
-            </ul>
+              <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+              <p className="text-gray-500 mb-4">{project.duration}</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700">
+                {project.description.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
+            </motion.div>
           </motion.a>
+
+
         ))}
       </div>
     </section>
