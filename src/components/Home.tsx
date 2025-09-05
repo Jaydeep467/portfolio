@@ -50,7 +50,7 @@ function Home() {
           transition={{ duration: 1, delay: 1 }}
         >
           <img
-            src="picture/Resume_pic.png"
+            src="/Resume_pic.png"
             alt="Profile"
             className="w-96 h-96 rounded-full object-cover shadow-2xl"
           />
