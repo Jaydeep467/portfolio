@@ -4,6 +4,7 @@ import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import AboutMe from "./components/Aboutme";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -19,8 +20,8 @@ function App() {
             <a href="#home" className="hover:text-blue-500">Home</a>
             <a href="#skills" className="hover:text-blue-500">Skills</a>
             <a href="#projects" className="hover:text-blue-500">Projects</a>
-            <a href="#experience" className="hover:text-blue-500">Experience</a>
             <a href="#about" className="hover:text-blue-500">About</a>
+            <a href="#experience" className="hover:text-blue-500">Experience</a>
             <a href="#contact" className="hover:text-blue-500">Contact</a>
           </div>
         </div>
@@ -32,7 +33,7 @@ function App() {
         <Home />
       </section>
 
-      <section id="skills" className="min-h-screen flex items-center justify-center bg-white">
+      <section id="skills" className="min-h-screen flex items-center justify-center bg-gray-50">
         {/* <h1 className="text-4xl font-bold">Skills</h1> */}
         <Skills />
       </section>
@@ -42,36 +43,26 @@ function App() {
         <Projects />
       </section>
 
-      <section id="experience" className="min-h-screen flex items-center justify-center bg-white">
-        {/* <h1 className="text-4xl font-bold">Experience</h1> */}
-        <Experience />
-      </section>
-
-      <section id="about" className="min-h-screen flex items-center justify-center bg-white">
+      <section id="about" className="min-h-screen flex items-center justify-center bg-gray-50">
         {/* <h1 className="text-4xl font-bold">About</h1> */}
         <AboutMe />
       </section>
 
-      <section id="contact" className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4">
-        <h1 className="text-4xl font-bold mb-6">Contact</h1>
-        <form className="w-full max-w-md space-y-4">
-          <input type="text" placeholder="Name" className="w-full border px-3 py-2 rounded"/>
-          <input type="email" placeholder="Email" className="w-full border px-3 py-2 rounded"/>
-          <textarea placeholder="Message" className="w-full border px-3 py-2 rounded"></textarea>
-          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-            Send
-          </button>
-        </form>
-        <div className="mt-6">
-          <p>Email: youremail@example.com</p>
-          <p>LinkedIn | GitHub</p>
-        </div>
+      <section id="experience" className="min-h-screen flex items-center justify-center bg-gray-50">
+        {/* <h1 className="text-4xl font-bold">Experience</h1> */}
+        <Experience />
       </section>
+
+      <section id="about" className="min-h-screen flex items-center justify-center bg-gray-50">
+        {/* <h1 className="text-4xl font-bold">Contact</h1> */}
+        <Contact />
+      </section>
+
 
       {/* Footer */}
       <footer className="text-center py-6 bg-white shadow-inner">
         <p>Thanks for visiting! | Built with React & Tailwind</p>
-        <p>© 2025 Your Name</p>
+        <p>© 2025 Jaydeep Patil</p>
       </footer>
     </div>
   );

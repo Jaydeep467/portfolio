@@ -48,7 +48,7 @@ function AboutMe() {
           {/* Social Links */}
           <div className="flex space-x-4 mt-4">
             <a
-              href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox"
+              href="mailto:patiljaydeep688@gmail.com?subject=Hello&body=I%20want%20to%20connect"
               className="flex items-center px-3 py-2 rounded-full border border-gray-800 text-gray-800 hover:bg-red-600 hover:text-white transition"
             >
               <FaEnvelope className="mr-2" /> Gmail
@@ -111,8 +111,8 @@ function AboutMe() {
         {/* Master's */}
         <div className="flex-1 bg-white shadow-lg rounded-2xl p-6 flex flex-col">
           <h4 className="text-2xl font-bold mb-2">M.S. Computer Science</h4>
-          <p className="text-gray-700 mb-1">Arizona State University, Tempe, AZ</p>
-          <p className="text-gray-600 mb-2">Aug 2023 – May 2025 | GPA: 3.80</p>
+          <p className="text-gray-700 mb-2">Arizona State University, Tempe, AZ</p>
+          <p className="text-gray-600 mb-6">Aug 2023 – May 2025 | GPA: 3.80</p>
           <p className="text-gray-700 font-semibold mb-2">Major Courses:</p>
           <div className="flex flex-wrap gap-2">
             <span className="bg-blue-50 border border-blue-200 rounded-lg px-3 py-1 text-gray-700 text-sm">
@@ -145,8 +145,8 @@ function AboutMe() {
         {/* Bachelor's */}
         <div className="flex-1 bg-white shadow-lg rounded-2xl p-6 flex flex-col">
           <h4 className="text-2xl font-bold mb-2">B.E. Electronics & Computer Science</h4>
-          <p className="text-gray-700 mb-1">Fr. Agnel Conceicao Rodrigues College of Engineering, Mumbai, India</p>
-          <p className="text-gray-600 mb-2">Aug 2019 – May 2023 | GPA: 9.28</p>
+          <p className="text-gray-700 mb-2">Fr. Agnel Conceicao Rodrigues College of Engineering, Mumbai, India</p>
+          <p className="text-gray-600 mb-6">Aug 2019 – May 2023 | GPA: 9.28</p>
           <p className="text-gray-700 font-semibold mb-2">Major Courses:</p>
           <div className="flex flex-wrap gap-2">
             <span className="bg-blue-50 border border-blue-200 rounded-lg px-3 py-1 text-gray-700 text-sm">

@@ -67,7 +67,7 @@ function Experience() {
       </p>
 
       {/* Experience Cards */}
-      <div className="relative w-full max-w-6xl flex flex-col gap-20">
+      <div className="relative w-full max-w-7xl flex flex-col gap-20">
       {/* Timeline vertical line */}
       <div className="absolute left-1/2 top-0 h-full w-1 bg-black transform -translate-x-1/2" />
 
