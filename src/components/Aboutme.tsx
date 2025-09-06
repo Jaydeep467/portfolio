@@ -84,14 +84,14 @@ function AboutMe() {
             >
               <FaGithub className="mr-2" /> GitHub
             </a>
-            <a
+            {/* <a
               href="https://www.instagram.com/jaydeeep_09/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center px-3 py-2 rounded-full border border-gray-800 text-gray-800 hover:bg-pink-600 hover:text-white transition"
             >
               <FaInstagram className="mr-2" /> Instagram
-            </a>
+            </a> */}
           </div>
         </div>
 

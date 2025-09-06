@@ -47,7 +47,7 @@ function Home() {
           className="w-full md:w-1/2 flex justify-between md:justify-end mt-10 md:mt-0 md:ml-10"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 1 }}
+          transition={{ duration: 0.5, delay: 1 }}
         >
           <img
             src="/Resume_pic.png"
