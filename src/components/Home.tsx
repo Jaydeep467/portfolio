@@ -72,7 +72,7 @@ function Home() {
 
         {/* Resume Button */}
         <a
-          href="/resume.pdf"
+          href="/Jaydeep Patil_Resume.pdf"
           download
           className="inline-block bg-blue-500 text-white px-12 py-5 rounded-lg shadow-md hover:bg-blue-600 transition text-lg font-semibold"
         >
