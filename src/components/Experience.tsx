@@ -1,4 +1,3 @@
-// import React from "react";
 import { motion } from "framer-motion";
 
 type ExperienceItem = {
@@ -56,20 +55,20 @@ function Experience() {
   return (
     <section
       id="experience"
-      className="relative min-h-screen flex flex-col items-center justify-start bg-gray-50 px-6 py-20"
+      className="relative min-h-screen flex flex-col items-center justify-start bg-gray-900 px-6 py-20"
     >
       {/* Section Title */}
-      <h2 className="text-5xl font-bold mb-4 text-gray-900 text-center">
+      <h2 className="text-5xl font-bold mb-4 text-white text-center">
         Experience
       </h2>
-      <p className="text-xl text-gray-600 mb-16 text-center max-w-2xl">
+      <p className="text-xl text-gray-300 mb-16 text-center max-w-2xl">
         My professional and internship experiences
       </p>
 
       {/* Experience Cards */}
       <div className="relative w-full max-w-7xl flex flex-col gap-20">
-      {/* Timeline vertical line */}
-      <div className="absolute left-1/2 top-0 h-full w-1 bg-black transform -translate-x-1/2" />
+        {/* Timeline vertical line */}
+        <div className="absolute left-1/2 top-0 h-full w-1 bg-gray-700 transform -translate-x-1/2" />
 
         {experiences.map((exp, idx) => {
           const isRight = idx % 2 === 1;
@@ -77,12 +76,16 @@ function Experience() {
           return (
             <motion.div
               key={idx}
-              className={`relative md:w-1/2 w-full bg-white border border-black shadow-lg p-8 ${
+              className={`relative md:w-1/2 w-full bg-gray-800 border border-gray-700 shadow-lg p-8 rounded-xl ${
                 isRight ? "md:ml-auto md:text-justify" : "md:mr-auto md:text-justify"
               }`}
               initial={{ opacity: 0, x: isRight ? 100 : -100 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: idx * 0.2 }}
+              whileHover={{
+                scale: 1.03,
+                boxShadow: "0 0 20px 4px #3b82f6, 0 0 30px 6px #2563eb",
+              }}
+              transition={{ duration: 0.5, delay: idx * 0.2 }}
               viewport={{ once: true }}
             >
               {/* Dot connecting to timeline */}
@@ -92,12 +95,10 @@ function Experience() {
                 }`}
               />
 
-              <h3 className="text-2xl font-semibold text-gray-800 mb-2">
-                {exp.role}
-              </h3>
-              <p className="text-gray-700 mb-2">{exp.company}</p>
-              <p className="text-gray-500 mb-4">{exp.duration}</p>
-              <ul className="list-disc list-inside text-gray-700 space-y-2">
+              <h3 className="text-2xl font-semibold text-white mb-2">{exp.role}</h3>
+              <p className="text-gray-300 mb-2">{exp.company}</p>
+              <p className="text-gray-400 mb-4">{exp.duration}</p>
+              <ul className="list-disc list-inside text-gray-300 space-y-2">
                 {exp.description.map((desc, i) => (
                   <li key={i}>{desc}</li>
                 ))}

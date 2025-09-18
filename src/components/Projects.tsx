@@ -1,4 +1,3 @@
-// import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -49,16 +48,36 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-screen flex flex-col items-center justify-start bg-gray-50 px-6 py-20"
+      className="relative min-h-screen flex flex-col items-center justify-start px-6 py-20 overflow-hidden"
     >
+      {/* 🔥 Animated Gradient Background */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 opacity-20 blur-3xl"
+        animate={{
+          backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+        }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        style={{
+          backgroundSize: "200% 200%",
+        }}
+      />
+
       {/* Section Heading */}
-      <h2 className="text-5xl font-extrabold mb-4">Projects</h2>
-      <p className="text-xl text-gray-600 mb-12">
+      <motion.h2
+        className="relative text-5xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        Projects
+      </motion.h2>
+      <p className="relative text-xl text-gray-300 mb-12">
         Some of the key projects I have worked on:
       </p>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl">
+      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl">
         {projects.map((project, index) => (
           <motion.a
             key={index}
@@ -72,29 +91,29 @@ function Projects() {
             viewport={{ once: true }}
           >
             <motion.div
-              className="bg-white border rounded-xl p-6 shadow-md relative h-96 flex flex-col justify-between"
+              className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl p-6 shadow-lg relative h-96 flex flex-col justify-between hover:shadow-blue-500/40"
               whileHover={{
-                scale: 1.1,
-                boxShadow: "0px 0px 25px rgba(59, 130, 246, 0.7)",
+                scale: 1.05,
+                boxShadow: "0px 0px 30px rgba(59,130,246,0.8)",
               }}
               transition={{ duration: 0.3 }}
             >
               {/* GitHub Icon */}
-              <div className="absolute top-4 right-4 text-gray-700 text-2xl">
+              <div className="absolute top-4 right-4 text-gray-300 text-2xl">
                 <FaGithub />
               </div>
 
-              <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-              <p className="text-gray-500 mb-4">{project.duration}</p>
-              <ul className="list-disc list-inside space-y-2 text-gray-700">
+              <h3 className="text-2xl font-bold mb-2 text-white">
+                {project.title}
+              </h3>
+              <p className="text-gray-400 mb-4">{project.duration}</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-300">
                 {project.description.map((point, i) => (
                   <li key={i}>{point}</li>
                 ))}
               </ul>
             </motion.div>
           </motion.a>
-
-
         ))}
       </div>
     </section>
