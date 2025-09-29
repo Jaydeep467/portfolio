@@ -10,7 +10,7 @@ const projects = [
       "Implemented data partitioning, replication, and Dead Letter Queues to ensure zero log loss and quick recovery.",
       "Improved throughput and reduced query latency compared to traditional ELK setups, enabling faster troubleshooting.",
     ],
-    github: "https://github.com/yourusername/event-logging-system",
+    github: "https://github.com/Jaydeep467",
   },
   {
     title: "Finance Management Web Application (FMWP)",
@@ -20,7 +20,7 @@ const projects = [
       "Reduced load times by 30% with lazy loading and code splitting.",
       "Deployed on AWS and Netlify for scalable and reliable access; integrated MongoDB and secure RESTful APIs.",
     ],
-    github: "https://github.com/yourusername/fmwp",
+    github: "https://github.com/Jaydeep467",
   },
   {
     title: "Retail Sales Forecasting with AI Insights",
@@ -30,7 +30,7 @@ const projects = [
       "Improved forecasting accuracy by 20% with LSTM-based models and optimized hyperparameters.",
       "Integrated a Tableau dashboard for visualizing sales trends, aiding inventory and marketing strategies.",
     ],
-    github: "https://github.com/yourusername/sales-forecasting",
+    github: "https://github.com/Jaydeep467",
   },
   {
     title: "Customer Segmentation & Recommendation System",
@@ -40,7 +40,7 @@ const projects = [
       "Used K-Means clustering for RFM-based customer segmentation and built a collaborative filtering recommendation model, increasing engagement by 25%.",
       "Queried and pre-processed data with Pandas and SQLAlchemy, integrating results into ML workflows.",
     ],
-    github: "https://github.com/yourusername/customer-segmentation",
+    github: "https://github.com/Jaydeep467",
   },
 ];
 
@@ -48,11 +48,11 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="relative min-h-screen flex flex-col items-center justify-start px-6 py-20 overflow-hidden"
+      className="relative w-full min-h-screen flex flex-col items-center justify-start px-6 py-20 overflow-hidden"
     >
       {/* 🔥 Animated Gradient Background */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 opacity-20 blur-3xl"
+        className="absolute w-full inset-0 bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 opacity-20 blur-3xl"
         animate={{
           backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
         }}

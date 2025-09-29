@@ -55,7 +55,7 @@ function Experience() {
   return (
     <section
       id="experience"
-      className="relative min-h-screen flex flex-col items-center justify-start bg-gray-900 px-6 py-20"
+      className="relative w-full min-h-screen flex flex-col items-center justify-start bg-gray-900 px-6 py-20"
     >
       {/* Section Title */}
       <h2 className="text-5xl font-bold mb-4 text-white text-center">
@@ -85,7 +85,7 @@ function Experience() {
                 scale: 1.03,
                 boxShadow: "0 0 20px 4px #3b82f6, 0 0 30px 6px #2563eb",
               }}
-              transition={{ duration: 0.5, delay: idx * 0.2 }}
+              transition={{ duration: 0.5, delay: idx * 0.01 }}
               viewport={{ once: true }}
             >
               {/* Dot connecting to timeline */}

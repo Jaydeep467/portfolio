@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="font-sans text-white bg-black scroll-smooth">
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full bg-black/90 backdrop-blur-md shadow-md z-50">
+      <nav className="fixed top-0 left-0 w-full bg-black backdrop-blur-md shadow-md z-50">
         <div className="w-full px-6 py-3 flex justify-between items-center">
           {/* Left side */}
           <div className="text-2xl font-bold pl-8 text-blue-500">

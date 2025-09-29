@@ -35,7 +35,7 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="min-h-screen flex flex-col justify-start bg-gray-900 py-20 px-4"
+      className="w-full min-h-screen flex flex-col justify-start bg-gray-900 py-20 px-4"
     >
       {/* Heading */}
       <h2 className="text-5xl font-extrabold mb-4 text-center text-white">

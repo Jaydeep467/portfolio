@@ -4,19 +4,19 @@ import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 const certifications = [
   {
     name: "Google - Operating Systems and You: Becoming a Power User",
-    link: "https://coursera.org/account/accomplishments/some-cert-link1",
+    link: "https://www.coursera.org/learn/os-power-user",
   },
   {
     name: "Coursera - Python Data Structures",
-    link: "https://coursera.org/account/accomplishments/some-cert-link2",
+    link: "https://coursera.org/share/4ff73223410cc9503c4ecd35d9d2e91b",
   },
   {
     name: "Hackerrank - Problem Solving: Intermediate",
-    link: "https://www.hackerrank.com/certificates/some-cert-link3",
+    link: "https://www.hackerrank.com/certificates/7a43c355bf00",
   },
   {
     name: "Coursera - Data Scientist's Toolbox",
-    link: "https://coursera.org/account/accomplishments/some-cert-link4",
+    link: "https://coursera.org/share/5210c8c183032d5818153e3bcb5b2da4",
   },
 ];
 
@@ -24,7 +24,7 @@ function AboutMe() {
   return (
     <section
       id="about"
-      className="min-h-screen flex flex-col items-center justify-start bg-gray-900 px-6 py-20"
+      className="w-full min-h-screen flex flex-col items-center justify-start bg-gray-900 px-6 py-20"
     >
       {/* Heading */}
       <h2 className="text-5xl font-extrabold mb-4 text-white">About Me</h2>

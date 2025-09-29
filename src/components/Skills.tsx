@@ -35,11 +35,11 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="relative min-h-screen flex flex-col items-center justify-start px-6 py-20 overflow-hidden"
+      className="relative w-full min-h-screen flex flex-col items-center justify-start px-6 py-20 overflow-hidden"
     >
       {/* 🔥 Animated Gradient Background */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 opacity-30 blur-3xl"
+        className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 opacity-30 blur-3xl"
         animate={{
           backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
         }}
@@ -49,7 +49,7 @@ function Skills() {
         }}
       />
 
-      {/* Section Title */}
+      {/* Section Content */}
       <motion.h2
         className="relative text-5xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
         initial={{ opacity: 0, y: -30 }}
