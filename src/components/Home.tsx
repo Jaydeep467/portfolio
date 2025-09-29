@@ -48,7 +48,7 @@ function Home() {
           sequence={[name, 2000]} // your name and wait 2s before repeating
           wrapper="span"
           cursor={true}          // blinking cursor
-          speed={350}            // typing speed in ms per character
+          speed={350 as any}            // typing speed in ms per character
           repeat={Infinity}      // loop indefinitely
           style={{ display: "inline-block" }}
         />
