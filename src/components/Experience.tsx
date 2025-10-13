@@ -55,13 +55,23 @@ function Experience() {
   return (
     <section
       id="experience"
-      className="relative w-full min-h-screen flex flex-col items-center justify-start bg-gray-900 px-6 py-20"
+      className="relative w-full min-h-screen flex flex-col items-center justify-start bg-gray-900 px-6 py-20 overflow-hidden"
     >
+      {/* 🔥 Animated Gradient Background */}
+      <motion.div
+        className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 opacity-30 blur-3xl"
+        animate={{
+          backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+        }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+        style={{ backgroundSize: "200% 200%" }}
+      />
+
       {/* Section Title */}
-      <h2 className="text-5xl font-bold mb-4 text-white text-center">
+      <h2 className="relative text-5xl font-bold mb-4 text-white text-center">
         Experience
       </h2>
-      <p className="text-xl text-gray-300 mb-16 text-center max-w-2xl">
+      <p className="relative text-xl text-gray-300 mb-16 text-center max-w-2xl">
         My professional and internship experiences
       </p>
 
@@ -110,5 +120,6 @@ function Experience() {
     </section>
   );
 }
+
 
 export default Experience;
