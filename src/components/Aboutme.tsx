@@ -1,205 +1,221 @@
 import { motion } from "framer-motion";
 import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 
+const education = [
+  {
+    degree: "M.S. Computer Science",
+    school: "Arizona State University",
+    location: "Tempe, AZ",
+    duration: "Aug 2023 – May 2025",
+    gpa: "GPA: 3.80 / 4.0",
+    courses: [
+      "Distributed Database Systems",
+      "Advanced Operating Systems",
+      "Statistical Machine Learning",
+      "Data Mining",
+      "Blockchain",
+      "Software Security",
+      "Data Visualization",
+      "Digital Video Processing",
+    ],
+  },
+  {
+    degree: "B.E. Electronics & Computer Science",
+    school: "Fr. Agnel College of Engineering",
+    location: "Mumbai, India",
+    duration: "Aug 2019 – May 2023",
+    gpa: "GPA: 9.28 / 10",
+    courses: [
+      "Data Structures & Algorithms",
+      "OOP",
+      "AI & Machine Learning",
+      "Database Systems",
+      "NLP",
+      "Cloud Computing",
+      "Big Data",
+      "IoT",
+    ],
+  },
+];
+
 const certifications = [
   {
-    name: "Google - Operating Systems and You: Becoming a Power User",
-    link: "https://www.coursera.org/learn/os-power-user",
-  },
-  {
-    name: "Coursera - Python Data Structures",
-    link: "https://coursera.org/share/4ff73223410cc9503c4ecd35d9d2e91b",
-  },
-  {
-    name: "Hackerrank - Problem Solving: Intermediate",
+    name: "HackerRank — Problem Solving: Intermediate",
     link: "https://www.hackerrank.com/certificates/7a43c355bf00",
+    issuer: "HackerRank",
   },
   {
-    name: "Coursera - Data Scientist's Toolbox",
+    name: "Python Data Structures",
+    link: "https://coursera.org/share/4ff73223410cc9503c4ecd35d9d2e91b",
+    issuer: "Coursera / University of Michigan",
+  },
+  {
+    name: "Data Scientist's Toolbox",
     link: "https://coursera.org/share/5210c8c183032d5818153e3bcb5b2da4",
+    issuer: "Coursera / Johns Hopkins",
   },
 ];
 
 function AboutMe() {
   return (
-    <section
-      id="about"
-      className="relative w-full min-h-screen flex flex-col items-center justify-start px-6 py-20 overflow-hidden"
-    >
-      {/* 🔥 Animated Gradient Background (same as Projects) */}
-      <motion.div
-        className="absolute w-full inset-0 bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 opacity-20 blur-3xl"
-        animate={{
-          backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-        }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        style={{ backgroundSize: "200% 200%" }}
-      />
-
-      {/* Heading */}
-      <h2 className="relative text-5xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-        About Me
-      </h2>
-      <p className="relative text-xl text-gray-300 mb-12 text-center max-w-4xl">
-        Passionate software developer with experience in full-stack development,
-        cloud services, and data-driven applications. I love building scalable
-        and user-friendly solutions.
-      </p>
-
-      {/* Contact + Certifications */}
-      <div className="flex flex-col md:flex-row gap-8 w-full max-w-6xl mb-16 relative z-10">
-        {/* Contact Card */}
-        <div className="w-full md:w-3/5 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg p-8 flex flex-col items-start">
-          <div className="flex items-center mb-4">
-            <div className="w-20 h-20 rounded-full bg-blue-500 flex items-center justify-center text-white text-3xl font-bold mr-4">
-              JP
-            </div>
-            <h3 className="text-3xl font-bold text-white">Jaydeep Patil</h3>
-          </div>
-
-          <div className="flex justify-between w-full mb-2 text-gray-300 font-semibold">
-            <span>Location: Tempe, Arizona, USA</span>
-            <span>Email: patiljaydeep688@gmail.com</span>
-          </div>
-          <div className="flex justify-between w-full mb-4 text-gray-300 font-semibold">
-            <span>Phone: +1 480-273-9189</span>
-            <span>Experience: 2+ years</span>
-          </div>
-
-          <div className="flex flex-wrap gap-3 mt-4">
-            <a
-              href="mailto:patiljaydeep688@gmail.com?subject=Hello&body=I%20want%20to%20connect"
-              className="flex items-center px-3 py-2 rounded-full border border-white/30 text-white hover:bg-red-600 hover:text-white cursor-pointer transition"
-            >
-              <FaEnvelope className="mr-2" /> Gmail
-            </a>
-            <a
-              href="https://www.linkedin.com/in/jaydeep-patil-9b9813217/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center px-3 py-2 rounded-full border border-white/30 text-white hover:bg-blue-700 hover:text-white cursor-pointer transition"
-            >
-              <FaLinkedin className="mr-2" /> LinkedIn
-            </a>
-            <a
-              href="https://github.com/Jaydeep467"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center px-3 py-2 rounded-full border border-white/30 text-white hover:bg-gray-600 hover:text-white cursor-pointer transition"
-            >
-              <FaGithub className="mr-2" /> GitHub
-            </a>
-          </div>
-        </div>
-
-        {/* Certifications Card */}
-        <div className="w-full md:w-2/5 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg p-8 flex flex-col">
-          <h3 className="text-2xl font-bold mb-4 text-white">Certifications</h3>
-          <p className="text-gray-300 mb-6">
-            Some of my top certifications and achievements:
-          </p>
-          <ul className="flex flex-col gap-3">
-            {certifications.map((cert, index) => (
-              <motion.a
-                key={index}
-                href={cert.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white text-sm text-center cursor-pointer"
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0px 0px 30px rgba(59,130,246,0.7)",
-                  color: "#3b82f6",
-                }}
-                transition={{ type: "spring", stiffness: 200 }}
-              >
-                {cert.name}
-              </motion.a>
-            ))}
-          </ul>
-        </div>
+    <section id="about" className="relative w-full overflow-hidden py-28 px-6">
+      {/* Ambient */}
+      <div className="absolute inset-0 pointer-events-none -z-0">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-[0.04]"
+          style={{ background: "radial-gradient(circle, #f472b6, transparent 70%)" }} />
       </div>
 
-      {/* Education */}
-      <h3 className="text-4xl font-extrabold mb-8 text-white relative z-10">
-        Education
-      </h3>
-      <div className="flex flex-col md:flex-row gap-8 w-full max-w-6xl">
-        {/* Master's */}
+      <div className="relative z-10 max-w-6xl mx-auto">
+        {/* Heading */}
         <motion.div
-          className="flex-1 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg p-6 flex flex-col"
-          initial={{ opacity: 0, y: 50 }}
+          className="mb-16"
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h4 className="text-2xl font-bold mb-2 text-white">
-            M.S. Computer Science
-          </h4>
-          <p className="text-gray-300 mb-2">
-            Arizona State University, Tempe, AZ
-          </p>
-          <p className="text-gray-400 mb-6">Aug 2023 – May 2025 | GPA: 3.80</p>
-          <p className="text-gray-300 font-semibold mb-2">Major Courses:</p>
-          <div className="flex flex-wrap gap-2">
-            {[
-              "Distributed Database Systems",
-              "Advanced Operating Systems",
-              "Data Mining",
-              "Data Visualisation",
-              "Statistical Machine Learning",
-              "Blockchain",
-              "Software Security",
-              "Digital Video Processing",
-            ].map((course) => (
-              <span
-                key={course}
-                className="bg-gray-800 text-white px-3 py-1 rounded-full text-sm hover:bg-blue-700 hover:text-white transition cursor-pointer"
-              >
-                {course}
-              </span>
-            ))}
-          </div>
+          <span className="section-label">Who I am</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-tight">
+            About <span className="grad-text">Me</span>
+          </h2>
         </motion.div>
 
-        {/* Bachelor's */}
+        {/* Top: Profile + Quick info */}
         <motion.div
-          className="flex-1 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg p-6 flex flex-col"
-          initial={{ opacity: 0, y: 50 }}
+          className="glass-card p-8 mb-8 flex flex-col md:flex-row gap-8 items-start"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h4 className="text-2xl font-bold mb-2 text-white">
-            B.E. Electronics & Computer Science
-          </h4>
-          <p className="text-gray-300 mb-2">
-            Fr. Agnel Conceicao Rodrigues College of Engineering, Mumbai, India
-          </p>
-          <p className="text-gray-400 mb-6">Aug 2019 – May 2023 | GPA: 9.28</p>
-          <p className="text-gray-300 font-semibold mb-2">Major Courses:</p>
-          <div className="flex flex-wrap gap-2">
-            {[
-              "Data Structures",
-              "Web Development",
-              "AI & ML",
-              "Database Systems",
-              "OOP",
-              "NLP",
-              "Cloud Computing",
-              "IOT",
-              "Big Data",
-            ].map((course) => (
-              <span
-                key={course}
-                className="bg-gray-800 text-white px-3 py-1 rounded-full text-sm hover:bg-blue-700 hover:text-white transition cursor-pointer"
-              >
-                {course}
-              </span>
+          {/* Avatar */}
+          <div className="shrink-0">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#4f9eff] to-[#a78bfa] flex items-center justify-center text-2xl font-extrabold text-white shadow-[0_0_30px_rgba(79,158,255,0.3)]"
+              style={{ fontFamily: "'Space Mono', monospace" }}>
+              JP
+            </div>
+          </div>
 
-            ))}
+          {/* Info */}
+          <div className="flex-1">
+            <h3 className="text-2xl font-bold text-white mb-1">Jaydeep Patil</h3>
+            <p className="text-[#4f9eff] font-medium text-sm mb-4">Full Stack Software Engineer</p>
+
+            <p className="text-white/55 leading-relaxed mb-6 max-w-2xl">
+              Software engineer with a strong bias for shipping — I've built everything from real-time LLM
+              inference systems to full e-commerce platforms from scratch. M.S. CS from ASU (3.80 GPA),
+              currently engineering at Skyfarer Academy. I care deeply about performance, clean architecture,
+              and code that actually matters in production.
+            </p>
+
+            {/* Meta */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+              {[
+                { label: "Location", value: "Tempe, AZ" },
+                { label: "Experience", value: "2+ years" },
+                { label: "Education", value: "M.S. CS, ASU" },
+                { label: "Status", value: "Open to work" },
+              ].map((item) => (
+                <div key={item.label}>
+                  <p className="text-white/25 text-xs mb-1" style={{ fontFamily: "'Space Mono', monospace" }}>
+                    {item.label.toUpperCase()}
+                  </p>
+                  <p className="text-white/80 text-sm font-medium">{item.value}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Social buttons */}
+            <div className="flex flex-wrap gap-3">
+              <a href="mailto:patiljaydeep688@gmail.com"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg border border-white/10 text-white/60 text-sm hover:border-[#4f9eff]/40 hover:text-white transition-all duration-200">
+                <FaEnvelope /> patiljaydeep688@gmail.com
+              </a>
+              <a href="https://www.linkedin.com/in/jaydeep-patil-9b9813217/"
+                target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg border border-white/10 text-white/60 text-sm hover:border-[#4f9eff]/40 hover:text-[#4f9eff] transition-all duration-200">
+                <FaLinkedin /> LinkedIn
+              </a>
+              <a href="https://github.com/Jaydeep467"
+                target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg border border-white/10 text-white/60 text-sm hover:border-white/30 hover:text-white transition-all duration-200">
+                <FaGithub /> Jaydeep467
+              </a>
+            </div>
           </div>
         </motion.div>
+
+        {/* Education */}
+        <div className="mb-8">
+          <h3 className="text-xl font-bold text-white mb-5 flex items-center gap-3">
+            <span className="text-[#4f9eff]" style={{ fontFamily: "'Space Mono', monospace" }}>01.</span>
+            Education
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {education.map((edu, idx) => (
+              <motion.div
+                key={idx}
+                className="glass-card p-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <h4 className="text-base font-bold text-white mb-1">{edu.degree}</h4>
+                <p className="text-[#4f9eff] text-sm font-medium">{edu.school}</p>
+                <p className="text-white/35 text-xs mt-0.5 mb-1" style={{ fontFamily: "'Space Mono', monospace" }}>
+                  {edu.location}
+                </p>
+                <div className="flex gap-3 mt-2 mb-4">
+                  <span className="tag text-[10px]">{edu.duration}</span>
+                  <span className="tag text-[10px] border-[#4f9eff]/30 text-[#4f9eff]">{edu.gpa}</span>
+                </div>
+                <p className="text-white/30 text-xs mb-2" style={{ fontFamily: "'Space Mono', monospace" }}>
+                  KEY COURSES
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {edu.courses.map((c) => (
+                    <span key={c} className="tag text-[10px]">{c}</span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Certifications */}
+        <div>
+          <h3 className="text-xl font-bold text-white mb-5 flex items-center gap-3">
+            <span className="text-[#4f9eff]" style={{ fontFamily: "'Space Mono', monospace" }}>02.</span>
+            Certifications
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {certifications.map((cert, idx) => (
+              <motion.a
+                key={idx}
+                href={cert.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-card p-5 flex flex-col gap-2 cursor-pointer group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: idx * 0.08 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <p className="text-white/70 text-sm font-medium group-hover:text-white transition-colors leading-snug">
+                  {cert.name}
+                </p>
+                <p className="text-white/30 text-xs" style={{ fontFamily: "'Space Mono', monospace" }}>
+                  {cert.issuer}
+                </p>
+                <span className="text-[#4f9eff] text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                  View certificate →
+                </span>
+              </motion.a>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

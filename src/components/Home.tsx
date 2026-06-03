@@ -1,89 +1,88 @@
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 function Home() {
-  const name = "Jaydeep Patil";
-
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center bg-black px-6 pt-40 pb-20 overflow-hidden text-center"
-    >
-      {/* 🔮 Animated Background Blobs */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <motion.div
-          className="absolute top-20 left-20 w-72 h-72 bg-purple-500 rounded-full filter blur-3xl opacity-30"
-          animate={{ x: [0, 100, 0], y: [0, 50, 0] }}
-          transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-20 w-48 h-48 bg-red-900 rounded-full filter blur-3xl opacity-10"
-          animate={{ x: [0, -120, 0], y: [0, -60, 0] }}
-          transition={{ duration: 12, repeat: Infinity, repeatType: "reverse" }}
-        />
-        <motion.div
-          className="absolute top-1/2 left-1/3 w-64 h-64 bg-pink-500 rounded-full filter blur-3xl opacity-20"
-          animate={{ x: [0, 80, 0], y: [0, -80, 0] }}
-          transition={{ duration: 14, repeat: Infinity, repeatType: "reverse" }}
-        />
+    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-28 pb-20 overflow-hidden text-center">
+      <div className="absolute inset-0 -z-0 overflow-hidden pointer-events-none">
+        <motion.div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(79,158,255,0.08) 0%, transparent 70%)" }}
+          animate={{ scale: [1, 1.15, 1], opacity: [0.6, 1, 0.6] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }} />
+        <motion.div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(167,139,250,0.07) 0%, transparent 70%)" }}
+          animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.9, 0.5] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }} />
       </div>
 
-      {/* Profile Image */}
-      <motion.div
-        className="flex justify-center mb-10"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <img
-          src="/Resume_pic (1).png"
-          alt="Profile"
-          className="w-60 h-60 md:w-72 md:h-72 rounded-full object-cover shadow-[0_0_50px_#3B82F6]"
-        />
+      <motion.div className="relative mb-10 z-10"
+        initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}>
+        <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden ring-2 ring-[#4f9eff]/30 shadow-[0_0_60px_rgba(79,158,255,0.2)]">
+          <img src="/Resume_pic (1).png" alt="Jaydeep Patil" className="w-full h-full object-cover" />
+        </div>
+        <span className="absolute bottom-2 right-2 w-4 h-4 bg-emerald-400 rounded-full ring-2 ring-[#080810] shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
       </motion.div>
 
-      {/* Animated Name - Typewriter Effect */}
-      <h1 className="text-5xl md:text-7xl font-extrabold mb-6 flex justify-center text-blue-500 drop-shadow-lg">
+      <motion.span className="section-label z-10" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+        Full Stack Software Engineer
+      </motion.span>
+
+      <motion.h1 className="relative z-10 text-5xl md:text-7xl font-extrabold mb-4 leading-tight"
+        style={{ fontFamily: "'Sora', sans-serif" }}
+        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.7 }}>
+        <span className="text-white">Jaydeep</span> <span className="grad-text">Patil</span>
+      </motion.h1>
+
+      <motion.div className="relative z-10 text-xl md:text-2xl text-white/50 mb-8 h-9"
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
         <TypeAnimation
-          sequence={[name, 2000]} // your name and wait 2s before repeating
-          wrapper="span"
-          cursor={true}          // blinking cursor
-          speed={350 as any}            // typing speed in ms per character
-          repeat={Infinity}      // loop indefinitely
-          style={{ display: "inline-block" }}
-        />
-      </h1>
+          sequence={["React + TypeScript Developer", 2000, "Node.js + PostgreSQL Engineer", 2000, "LLM & AI Tooling Builder", 2000, "AWS + Docker Practitioner", 2000]}
+          wrapper="span" cursor={true} repeat={Infinity}
+          style={{ fontFamily: "'Space Mono', monospace", fontSize: "1rem" }} />
+      </motion.div>
 
-      {/* Short Intro */}
-      <motion.p
-        className="text-xl md:text-2xl text-gray-300 max-w-2xl mb-10"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.5 }}
-      >
-        Passionate software developer who loves solving complex problems
-        and building scalable, user-friendly solutions.
-      </motion.p>
-
-      {/* Resume Summary Box */}
-      <motion.div
-        className="bg-gray-900/80 border border-gray-700 shadow-xl rounded-2xl p-8 max-w-2xl backdrop-blur-sm"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 1.5 }}
-      >
-        <p className="text-gray-300 text-lg md:text-xl mb-8 leading-relaxed">
-          With hands-on experience in full-stack development, cloud services,
-          and data-driven applications, I strive to deliver impactful solutions
-          that bridge user needs with technology.
+      <motion.div className="glass-card relative z-10 p-8 max-w-2xl mb-10 text-left"
+        initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.8 }}>
+        <div className="accent-line" />
+        <p className="text-white/65 text-base md:text-lg leading-relaxed">
+          M.S. Computer Science from <span className="text-white font-medium">Arizona State University</span> (GPA 3.80).
+          I build production-grade full-stack systems — from real-time LLM inference pipelines to e-commerce platforms at scale.
+          Currently engineering at <span className="text-[#4f9eff] font-medium">Skyfarer Academy</span>, shipping features used by thousands of users.
         </p>
-        <a
-          href="/Jaydeep%20Patil_Resume.pdf"
-          download="Jaydeep-Patil-Resume.pdf"
-          className="relative z-10 inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-4 rounded-lg shadow-md hover:opacity-90 transition text-lg font-semibold"
-        >
+        <div className="mt-6 flex flex-wrap gap-2">
+          {["React", "TypeScript", "Node.js", "PostgreSQL", "Python", "AWS", "Docker"].map((t) => (
+            <span key={t} className="tag">{t}</span>
+          ))}
+        </div>
+      </motion.div>
+
+      <motion.div className="relative z-10 flex flex-wrap gap-4 justify-center"
+        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}>
+        <a href="/Jaydeep%20Patil_Resume.pdf" download="Jaydeep-Patil-Resume.pdf"
+          className="px-8 py-3 rounded-lg bg-[#4f9eff] text-[#080810] font-bold text-sm tracking-wide hover:bg-[#6fb0ff] transition-all duration-200 shadow-[0_0_20px_rgba(79,158,255,0.3)] hover:shadow-[0_0_30px_rgba(79,158,255,0.5)]"
+          style={{ fontFamily: "'Space Mono', monospace" }}>
           Download Resume
         </a>
+        <a href="#projects"
+          className="px-8 py-3 rounded-lg border border-white/15 text-white/80 font-medium text-sm hover:border-[#4f9eff]/50 hover:text-white transition-all duration-200"
+          style={{ fontFamily: "'Space Mono', monospace" }}>
+          View Projects →
+        </a>
+      </motion.div>
+
+      <motion.div className="relative z-10 flex gap-6 mt-10 text-white/30"
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1 }}>
+        <a href="https://github.com/Jaydeep467" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200 text-xl"><FaGithub /></a>
+        <a href="https://www.linkedin.com/in/jaydeep-patil-9b9813217/" target="_blank" rel="noopener noreferrer" className="hover:text-[#4f9eff] transition-colors duration-200 text-xl"><FaLinkedin /></a>
+        <a href="mailto:patiljaydeep688@gmail.com" className="hover:text-[#f472b6] transition-colors duration-200 text-xl"><FaEnvelope /></a>
+      </motion.div>
+
+      <motion.div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/20"
+        animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }}>
+        <span className="text-xs" style={{ fontFamily: "'Space Mono', monospace", letterSpacing: "0.15em" }}>SCROLL</span>
+        <div className="w-px h-8 bg-gradient-to-b from-white/20 to-transparent" />
       </motion.div>
     </section>
   );

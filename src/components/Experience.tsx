@@ -1,125 +1,115 @@
 import { motion } from "framer-motion";
 
-type ExperienceItem = {
-  role: string;
-  company: string;
-  duration: string;
-  description: string[];
-};
+type Exp = { role: string; company: string; location: string; duration: string; type: string; bullets: string[]; tags: string[]; };
 
-const experiences: ExperienceItem[] = [
+const experiences: Exp[] = [
   {
-    role: "Software Engineer Intern",
-    company: "Skyfarer Academy, San Diego CA",
-    duration: "April 2025 – Present",
-    description: [
-      "Developed full-stack web applications in a cross-functional team, streamlining UI for 200+ active users using React.js, Node.js, and MongoDB",
-      "Built and integrated RESTful APIs to enhance user management and data retrieval, ensuring adherence to design principles.",
-      "Strengthened collaborative development by contributing in Agile ceremonies and optimizing GitHub workflows.",
-      "Wrote clean, maintainable code following team standards, and improved code quality through peer reviews.",
-      "Streamlined deployments by facilitating CI/CD pipelines using GitHub Actions and Docker, improving deployment efficiency.",
+    role: "Software Engineer",
+    company: "Skyfarer Academy",
+    location: "San Diego, CA (Remote)",
+    duration: "Apr 2025 – Present",
+    type: "Full-time",
+    bullets: [
+      "Architected and shipped a buyer-pays-at-checkout shipping system — rebuilt the full payment + label-generation flow using Shippo API, replacing the legacy seller-pays model and automating label creation across all transactions.",
+      "Engineered React/TypeScript UI features serving 200+ active marketplace users — built reusable component systems reducing per-feature dev time and maintaining zero critical regressions across 4 major releases.",
+      "Designed and optimized PostgreSQL schemas and Node.js REST APIs for listing management, user auth, and order workflows — achieving sub-100ms p95 query performance under concurrent load.",
+      "Owned CI/CD pipeline improvements using GitHub Actions and Docker — reduced deployment friction and enabled zero-downtime releases on a Sharetribe-based platform architecture.",
+      "Drove PR reviews, identified and resolved edge-case bugs (including debounce fixes for checkout form race conditions), and maintained high code quality across an Agile team.",
     ],
+    tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "AWS", "Docker", "Shippo API"],
   },
   {
     role: "Adobe Student Ambassador",
-    company: "Arizona State University, Tempe, Arizona",
+    company: "Arizona State University",
+    location: "Tempe, AZ",
     duration: "Aug 2024 – May 2025",
-    description: [
-      "Created and shared interactive digital content through Adobe Express, boosting student engagement and design thinking",
-      "Organized and led campus workshops on Adobe tools, promoting the integration of visual design in technology projects in partnership with Adobe representatives",
+    type: "Part-time",
+    bullets: [
+      "Represented Adobe on campus — organized and led workshops on Adobe Express and Creative Cloud tools, driving adoption among 100+ students across engineering and design programs.",
+      "Partnered directly with Adobe representatives to design curriculum integrating visual design thinking into technical project workflows.",
     ],
+    tags: ["Adobe Express", "Creative Cloud", "Workshop Facilitation"],
   },
   {
     role: "Full Stack Developer",
-    company: "TEDx CRCE, Fr. Agnel Engineering College, Mumbai, India",
-    duration: "March 2022 – April 2023",
-    description: [
-      "Engineered a web application to optimize student council operations, improving task tracking and communication efficiency by 25%. Enhanced UI/UX through iterative design improvements, increasing user satisfaction by 25%.",
-      "Facilitated seamless data flow and improved data management using React, Node.js, Express, and MongoDB.",
-      "Conducted backend performance optimizations, improving API response times by 20%.",
+    company: "TEDx CRCE",
+    location: "Mumbai, India",
+    duration: "Mar 2022 – Apr 2023",
+    type: "Contract",
+    bullets: [
+      "Built and owned a full-stack web application streamlining student council operations — improved task tracking and cross-team communication efficiency by 25% within the first semester of deployment.",
+      "Delivered backend performance optimizations (Node.js/Express) that reduced API response times by 20% — identified bottlenecks through profiling and rewrote critical query paths.",
+      "Iterated on UI/UX through user feedback loops — drove a 25% improvement in reported user satisfaction scores across the platform.",
     ],
+    tags: ["React", "Node.js", "Express", "MongoDB"],
   },
   {
     role: "Web Development Intern",
-    company: "Blended Learning, Pune, India",
-    duration: "May 2021 – July 2021",
-    description: [
-      "Developed and maintained responsive web applications with HTML, CSS, and JavaScript, improving accessibility and load performance.",
-      "Integrated RESTful APIs for dynamic content updates, providing real-time access to critical information for users.",
-      "Improved code quality and reduced UI inconsistencies by approximately 20% through code reviews, cross-browser debugging, and Git-based collaboration.",
+    company: "Blended Learning",
+    location: "Pune, India",
+    duration: "May 2021 – Jul 2021",
+    type: "Internship",
+    bullets: [
+      "Developed and shipped responsive web features — improved page load performance and cross-browser accessibility for a platform with daily active users.",
+      "Integrated RESTful APIs enabling real-time dynamic content updates, replacing static page refreshes and improving perceived UX.",
     ],
+    tags: ["HTML", "CSS", "JavaScript", "REST APIs"],
   },
 ];
 
 function Experience() {
   return (
-    <section
-      id="experience"
-      className="relative w-full min-h-screen flex flex-col items-center justify-start bg-gray-900 px-6 py-20 overflow-hidden"
-    >
-      {/* 🔥 Animated Gradient Background */}
-      <motion.div
-        className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 opacity-30 blur-3xl"
-        animate={{
-          backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-        }}
-        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        style={{ backgroundSize: "200% 200%" }}
-      />
-
-      {/* Section Title */}
-      <h2 className="relative text-5xl font-bold mb-4 text-white text-center">
-        Experience
-      </h2>
-      <p className="relative text-xl text-gray-300 mb-16 text-center max-w-2xl">
-        My professional and internship experiences
-      </p>
-
-      {/* Experience Cards */}
-      <div className="relative w-full max-w-7xl flex flex-col gap-20">
-        {/* Timeline vertical line */}
-        <div className="absolute left-1/2 top-0 h-full w-1 bg-gray-700 transform -translate-x-1/2" />
-
-        {experiences.map((exp, idx) => {
-          const isRight = idx % 2 === 1;
-
-          return (
-            <motion.div
-              key={idx}
-              className={`relative md:w-1/2 w-full bg-gray-800 border border-gray-700 shadow-lg p-8 rounded-xl ${
-                isRight ? "md:ml-auto md:text-justify" : "md:mr-auto md:text-justify"
-              }`}
-              initial={{ opacity: 0, x: isRight ? 100 : -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              whileHover={{
-                scale: 1.03,
-                boxShadow: "0 0 20px 4px #3b82f6, 0 0 30px 6px #2563eb",
-              }}
-              transition={{ duration: 0.5, delay: idx * 0.01 }}
-              viewport={{ once: true }}
-            >
-              {/* Dot connecting to timeline */}
-              <div
-                className={`hidden md:block absolute top-10 w-5 h-5 bg-blue-500 rounded-full ${
-                  isRight ? "-left-2.5" : "-right-2.5"
-                }`}
-              />
-
-              <h3 className="text-2xl font-semibold text-white mb-2">{exp.role}</h3>
-              <p className="text-gray-300 mb-2">{exp.company}</p>
-              <p className="text-gray-400 mb-4">{exp.duration}</p>
-              <ul className="list-disc list-inside text-gray-300 space-y-2">
-                {exp.description.map((desc, i) => (
-                  <li key={i}>{desc}</li>
-                ))}
-              </ul>
-            </motion.div>
-          );
-        })}
+    <section id="experience" className="relative w-full overflow-hidden py-28 px-6">
+      <div className="absolute inset-0 pointer-events-none -z-0">
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full opacity-[0.04]"
+          style={{ background: "radial-gradient(circle, #4f9eff, transparent 70%)" }} />
+      </div>
+      <div className="relative z-10 max-w-4xl mx-auto">
+        <motion.div className="mb-16" initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+          <span className="section-label">Where I've worked</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-tight">Work <span className="grad-text">Experience</span></h2>
+        </motion.div>
+        <div className="relative">
+          <div className="absolute left-3 top-0 bottom-0 w-px bg-gradient-to-b from-[#4f9eff]/40 via-[#a78bfa]/20 to-transparent hidden md:block" />
+          <div className="flex flex-col gap-12">
+            {experiences.map((exp, idx) => (
+              <motion.div key={idx} className="relative md:pl-12"
+                initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }} viewport={{ once: true, margin: "-40px" }}>
+                <div className="hidden md:flex absolute left-0 top-1 w-7 h-7 rounded-full items-center justify-center bg-[#080810] border border-[#4f9eff]/40 shadow-[0_0_12px_rgba(79,158,255,0.2)]">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#4f9eff]" />
+                </div>
+                <div className="glass-card p-7 hover:border-[#4f9eff]/30 transition-all duration-300">
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-5">
+                    <div>
+                      <h3 className="text-xl font-bold text-white">{exp.role}</h3>
+                      <p className="text-[#4f9eff] font-medium mt-0.5">{exp.company}</p>
+                      <p className="text-white/35 text-sm mt-0.5">{exp.location}</p>
+                    </div>
+                    <div className="flex flex-col items-start md:items-end gap-1.5 shrink-0">
+                      <span className="text-xs px-3 py-1 rounded-full bg-[#4f9eff]/10 text-[#4f9eff] border border-[#4f9eff]/20" style={{ fontFamily: "'Space Mono', monospace" }}>{exp.duration}</span>
+                      <span className="text-xs text-white/30" style={{ fontFamily: "'Space Mono', monospace" }}>{exp.type}</span>
+                    </div>
+                  </div>
+                  <ul className="space-y-3 mb-5">
+                    {exp.bullets.map((b, i) => (
+                      <li key={i} className="flex gap-3 text-white/60 text-sm leading-relaxed">
+                        <span className="text-[#4f9eff] shrink-0 mt-0.5">▸</span>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
+                    {exp.tags.map((t) => <span key={t} className="tag">{t}</span>)}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
 }
-
 
 export default Experience;

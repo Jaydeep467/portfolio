@@ -1,106 +1,46 @@
 import { motion } from "framer-motion";
 
-type SkillsMap = {
-  [category: string]: string[];
-};
+const skillCategories = [
+  { label: "Languages", icon: "⌨", skills: ["Python", "TypeScript", "JavaScript (ES6+)", "SQL", "Java", "C++", "Bash"] },
+  { label: "Frontend", icon: "🖥", skills: ["React", "Next.js", "Tailwind CSS", "Redux Toolkit", "Zustand", "Chart.js", "Framer Motion"] },
+  { label: "Backend & APIs", icon: "⚙", skills: ["Node.js", "Express.js", "FastAPI", "Flask", "REST APIs", "GraphQL", "JWT", "OAuth 2.0"] },
+  { label: "Databases", icon: "🗄", skills: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Query Optimization", "Schema Design"] },
+  { label: "AI & ML", icon: "🤖", skills: ["PyTorch", "BERT", "Scikit-learn", "LLM Inference", "CUDA", "Prompt Engineering", "NLP", "Pandas"] },
+  { label: "DevOps & Cloud", icon: "☁", skills: ["AWS (EC2, S3, Lambda)", "Docker", "GitHub Actions", "CI/CD", "Kafka", "Nginx", "Vercel"] },
+];
 
-const skills: SkillsMap = {
-  "Programming Languages": ["Python", "Java", "C++", "SQL", "HTML", "C#"],
-  "Frameworks & Libraries": [
-    "React",
-    "JavaScript",
-    "TypeScript",
-    "MongoDB",
-    "PostgreSQL",
-    "Django",
-    "Material UI",
-    "Node.js",
-    "Express.js",
-    "Docker",
-    "Git",
-    "Tailwind CSS",
-    "Next.js",
-  ],
-  "Cloud Platforms": [
-    "AWS",
-    "AWS EC2",
-    "AWS S3",
-    "AWS Lambda",
-    "Firebase",
-    "GCP",
-  ],
-};
+const containerVariants = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
+const cardVariants = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
 
 function Skills() {
   return (
-    <section
-      id="skills"
-      className="relative w-full min-h-screen flex flex-col items-center justify-start px-6 py-20 overflow-hidden"
-    >
-      {/* 🔥 Animated Gradient Background */}
-      <motion.div
-        className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 opacity-30 blur-3xl"
-        animate={{
-          backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-        }}
-        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        style={{
-          backgroundSize: "200% 200%",
-        }}
-      />
-
-      {/* Section Content */}
-      <motion.h2
-        className="relative text-5xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
-        initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        Technical Skills
-      </motion.h2>
-
-      <motion.p
-        className="relative text-xl text-gray-300 mb-16 text-center max-w-2xl"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        viewport={{ once: true }}
-      >
-        A showcase of my technical expertise across programming, frameworks, and
-        cloud platforms.
-      </motion.p>
-
-      {/* Skills Categories */}
-      <div className="relative w-full max-w-6xl flex flex-col gap-12 items-center">
-        {Object.entries(skills).map(([category, items], idx) => (
-          <motion.div
-            key={category}
-            className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl p-8 w-full max-w-5xl flex flex-col items-center text-center hover:shadow-blue-500/40 transition"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: idx * 0.2 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-semibold text-white mb-6">
-              {category}
-            </h3>
-
-            {/* Skill Chips */}
-            <div className="flex flex-wrap justify-center gap-4">
-              {items.map((skill) => (
-                <motion.span
-                  key={skill}
-                  className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-5 py-2 rounded-full text-lg font-medium shadow-md hover:shadow-lg hover:from-purple-500 hover:to-pink-500 transition"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {skill}
-                </motion.span>
-              ))}
-            </div>
-          </motion.div>
-        ))}
+    <section id="skills" className="relative w-full overflow-hidden py-28 px-6">
+      <div className="absolute inset-0 pointer-events-none -z-0">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-[0.04]"
+          style={{ background: "radial-gradient(circle, #a78bfa, transparent 70%)" }} />
+      </div>
+      <div className="relative z-10 max-w-6xl mx-auto">
+        <motion.div className="mb-16" initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+          <span className="section-label">What I work with</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-tight">
+            Technical <span className="grad-text">Skills</span>
+          </h2>
+          <p className="mt-4 text-white/45 max-w-xl">Battle-tested across production systems — full-stack, cloud infrastructure, and AI/ML pipelines.</p>
+        </motion.div>
+        <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+          variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }}>
+          {skillCategories.map((cat) => (
+            <motion.div key={cat.label} className="glass-card p-6 group" variants={cardVariants}>
+              <div className="flex items-center gap-3 mb-5">
+                <span className="text-2xl">{cat.icon}</span>
+                <h3 className="text-sm font-semibold tracking-widest text-white/80 uppercase" style={{ fontFamily: "'Space Mono', monospace" }}>{cat.label}</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {cat.skills.map((skill) => <span key={skill} className="tag cursor-default">{skill}</span>)}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
