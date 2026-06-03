@@ -38,21 +38,23 @@ function App() {
 
   return (
     <div className="font-sans text-white bg-[#080810] scroll-smooth">
-      <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#080810]/90 backdrop-blur-xl border-b border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.5)]" : "bg-transparent"
-      }`}>
+
+      {/* ── Navbar ── */}
+      <nav className="fixed top-0 left-0 w-full z-[999] bg-[#080810] border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="#home" className="text-lg font-bold text-white/90 hover:text-[#4f9eff] transition-colors duration-300"
+          <a href="#home"
+            className="text-lg font-bold text-white/90 hover:text-[#4f9eff] transition-colors duration-300"
             style={{ fontFamily: "'Space Mono', monospace", letterSpacing: "0.2em" }}>
             JP<span className="text-[#4f9eff]">.</span>
           </a>
 
+          {/* Desktop links */}
           <div className="hidden md:flex items-center gap-8">
             {NAV_LINKS.map(({ label, href }) => {
               const id = href.replace("#", "");
               return (
                 <a key={id} href={href}
-                  className={`text-base font-medium tracking-wide transition-all duration-200 relative group ${
+                  className={`text-sm font-medium tracking-wide transition-all duration-200 relative group ${
                     active === id ? "text-[#4f9eff]" : "text-white/60 hover:text-white"
                   }`}>
                   {label}
@@ -64,25 +66,41 @@ function App() {
             })}
           </div>
 
-          <button className="md:hidden flex flex-col gap-1.5 p-2" onClick={() => setMenuOpen((o) => !o)} aria-label="Toggle menu">
+          {/* Hamburger */}
+          <button
+            className="md:hidden flex flex-col gap-1.5 p-2 relative z-[1000]"
+            onClick={() => setMenuOpen((o) => !o)}
+            aria-label="Toggle menu">
             <span className={`block h-px w-6 bg-white transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2.5" : ""}`} />
             <span className={`block h-px w-6 bg-white transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
             <span className={`block h-px w-6 bg-white transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2.5" : ""}`} />
           </button>
         </div>
-
-        <div className={`md:hidden transition-all duration-300 overflow-hidden ${
-          menuOpen ? "max-h-96 border-b border-white/5" : "max-h-0"
-        } bg-[#080810]/95 backdrop-blur-xl`}>
-          {NAV_LINKS.map(({ label, href }) => (
-            <a key={href} href={href} onClick={() => setMenuOpen(false)}
-              className="block px-8 py-4 text-sm text-white/70 hover:text-white hover:bg-white/5 transition border-b border-white/5 last:border-0">
-              {label}
-            </a>
-          ))}
-        </div>
       </nav>
 
+      {/* ── Mobile menu — fixed full screen overlay OUTSIDE nav ── */}
+      {menuOpen && (
+        <div className="fixed inset-0 z-[998] bg-[#080810] flex flex-col items-center justify-center gap-1 md:hidden">
+          {NAV_LINKS.map(({ label, href }) => {
+            const id = href.replace("#", "");
+            return (
+              <a
+                key={href}
+                href={href}
+                onClick={() => setMenuOpen(false)}
+                className={`w-full text-center text-2xl font-bold py-5 px-8 border-b border-white/5 transition-all duration-200 ${
+                  active === id ? "text-[#4f9eff]" : "text-white/60 hover:text-white hover:bg-white/3"
+                }`}
+                style={{ fontFamily: "'Sora', sans-serif" }}
+              >
+                {label}
+              </a>
+            );
+          })}
+        </div>
+      )}
+
+      {/* ── Sections ── */}
       <section id="home" className="min-h-screen"><Home /></section>
       <section id="skills" className="min-h-screen"><Skills /></section>
       <section id="experience" className="min-h-screen"><Experience /></section>
@@ -90,6 +108,7 @@ function App() {
       <section id="about" className="min-h-screen"><AboutMe /></section>
       <section id="contact" className="min-h-screen"><Contact /></section>
 
+      {/* ── Footer ── */}
       <footer className="border-t border-white/5 py-8 bg-[#080810]">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/30 text-sm" style={{ fontFamily: "'Space Mono', monospace" }}>© 2026 Jaydeep Patil</p>
