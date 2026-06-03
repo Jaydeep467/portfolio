@@ -14,7 +14,7 @@ const SOCIAL_LINKS = [
   {
     icon: <FaLinkedin />,
     label: "LinkedIn",
-    value: "/in/jaydeep-patil-9b9813217",
+    value: "Jaydeep Patil",
     href: "https://www.linkedin.com/in/jaydeep-patil-9b9813217/",
     color: "hover:text-[#4f9eff] hover:border-[#4f9eff]/30",
   },

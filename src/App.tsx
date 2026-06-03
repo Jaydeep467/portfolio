@@ -52,7 +52,7 @@ function App() {
               const id = href.replace("#", "");
               return (
                 <a key={id} href={href}
-                  className={`text-sm font-medium tracking-wide transition-all duration-200 relative group ${
+                  className={`text-base font-medium tracking-wide transition-all duration-200 relative group ${
                     active === id ? "text-[#4f9eff]" : "text-white/60 hover:text-white"
                   }`}>
                   {label}

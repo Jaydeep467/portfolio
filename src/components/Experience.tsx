@@ -31,9 +31,9 @@ const experiences: Exp[] = [
     tags: ["Adobe Express", "Creative Cloud", "Workshop Facilitation"],
   },
   {
-    role: "Full Stack Developer",
-    company: "TEDx CRCE",
-    location: "Mumbai, India",
+    role: "Technical Lead",
+    company: "Rajiv Gandhi E-Learning Academy",
+    location: "Pune, India",
     duration: "Mar 2022 – Apr 2023",
     type: "Contract",
     bullets: [

@@ -62,7 +62,7 @@ const projects: Project[] = [
       "Reduced load times 30% via lazy loading and code splitting; deployed on AWS with MongoDB + PostgreSQL hybrid storage.",
       "Implemented JWT auth with refresh token rotation and role-based access control across all API endpoints.",
     ],
-    github: "https://github.com/Jaydeep467/FMWP",
+    github: "https://github.com/Jaydeep467/fmwp_application",
   },
 ];
 
