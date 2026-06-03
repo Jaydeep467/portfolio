@@ -68,7 +68,7 @@ function App() {
 
           {/* Hamburger */}
           <button
-            className="md:hidden flex flex-col gap-1.5 p-2 relative z-[1000]"
+            className="md:hidden flex flex-col gap-1.5 p-2"
             onClick={() => setMenuOpen((o) => !o)}
             aria-label="Toggle menu">
             <span className={`block h-px w-6 bg-white transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2.5" : ""}`} />
@@ -76,29 +76,29 @@ function App() {
             <span className={`block h-px w-6 bg-white transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2.5" : ""}`} />
           </button>
         </div>
-      </nav>
 
-      {/* ── Mobile menu — fixed full screen overlay OUTSIDE nav ── */}
-      {menuOpen && (
-        <div className="fixed inset-0 z-[998] bg-[#080810] flex flex-col items-center justify-center gap-1 md:hidden">
-          {NAV_LINKS.map(({ label, href }) => {
-            const id = href.replace("#", "");
-            return (
-              <a
-                key={href}
-                href={href}
-                onClick={() => setMenuOpen(false)}
-                className={`w-full text-center text-2xl font-bold py-5 px-8 border-b border-white/5 transition-all duration-200 ${
-                  active === id ? "text-[#4f9eff]" : "text-white/60 hover:text-white hover:bg-white/3"
-                }`}
-                style={{ fontFamily: "'Sora', sans-serif" }}
-              >
-                {label}
-              </a>
-            );
-          })}
-        </div>
-      )}
+        {/* Mobile dropdown — inside nav, solid background, covers page */}
+        {menuOpen && (
+          <div className="md:hidden fixed top-[57px] left-0 w-full h-screen bg-[#080810] border-t border-white/5 overflow-y-auto">
+            {NAV_LINKS.map(({ label, href }) => {
+              const id = href.replace("#", "");
+              return (
+                <a
+                  key={href}
+                  href={href}
+                  onClick={() => setMenuOpen(false)}
+                  className={`block px-8 py-5 text-base border-b border-white/5 transition-all duration-200 ${
+                    active === id ? "text-[#4f9eff] bg-white/3" : "text-white/60 hover:text-white hover:bg-white/5"
+                  }`}
+                  style={{ fontFamily: "'Sora', sans-serif" }}
+                >
+                  {label}
+                </a>
+              );
+            })}
+          </div>
+        )}
+      </nav>
 
       {/* ── Sections ── */}
       <section id="home" className="min-h-screen"><Home /></section>
