@@ -150,7 +150,7 @@ function Contact() {
                         type="text"
                         placeholder="Your name"
                         required
-                        className="w-full bg-white/3 border border-white/8 rounded-lg px-4 py-3 text-white placeholder-white/20 text-sm focus:outline-none focus:border-[#4f9eff]/50 focus:bg-white/5 transition-all duration-200"
+                        className="w-full bg-white/3 border border-white/8 rounded-lg px-4 py-3 text-black placeholder-white/20 text-sm focus:outline-none focus:border-[#4f9eff]/50 focus:bg-white/5 transition-all duration-200"
                       />
                     </div>
                     <div>
@@ -162,7 +162,7 @@ function Contact() {
                         type="email"
                         placeholder="your@email.com"
                         required
-                        className="w-full bg-white/3 border border-white/8 rounded-lg px-4 py-3 text-white placeholder-white/20 text-sm focus:outline-none focus:border-[#4f9eff]/50 focus:bg-white/5 transition-all duration-200"
+                        className="w-full bg-white/3 border border-white/8 rounded-lg px-4 py-3 text-black placeholder-white/20 text-sm focus:outline-none focus:border-[#4f9eff]/50 focus:bg-white/5 transition-all duration-200"
                       />
                     </div>
                   </div>
@@ -176,7 +176,7 @@ function Contact() {
                       type="text"
                       placeholder="What's this about?"
                       required
-                      className="w-full bg-white/3 border border-white/8 rounded-lg px-4 py-3 text-white placeholder-white/20 text-sm focus:outline-none focus:border-[#4f9eff]/50 focus:bg-white/5 transition-all duration-200"
+                      className="w-full bg-white/3 border border-white/8 rounded-lg px-4 py-3 text-black placeholder-white/20 text-sm focus:outline-none focus:border-[#4f9eff]/50 focus:bg-white/5 transition-all duration-200"
                     />
                   </div>
 
@@ -189,7 +189,7 @@ function Contact() {
                       placeholder="Tell me about the opportunity or project..."
                       rows={5}
                       required
-                      className="w-full bg-white/3 border border-white/8 rounded-lg px-4 py-3 text-white placeholder-white/20 text-sm focus:outline-none focus:border-[#4f9eff]/50 focus:bg-white/5 transition-all duration-200 resize-none"
+                      className="w-full bg-white/3 border border-white/8 rounded-lg px-4 py-3 text-black placeholder-white/20 text-sm focus:outline-none focus:border-[#4f9eff]/50 focus:bg-white/5 transition-all duration-200 resize-none"
                     />
                   </div>
 

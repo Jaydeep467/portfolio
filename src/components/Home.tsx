@@ -67,7 +67,7 @@ function Home() {
       {/* CTA buttons */}
       <motion.div className="relative z-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full max-w-xs sm:max-w-none"
         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}>
-        <a href="/Jaydeep%20Patil_Resume.pdf" download="Jaydeep-Patil-Resume.pdf"
+        <a href="/Jaydeep_Patil_Resume.pdf" download="Jaydeep-Patil-Resume.pdf"
           className="px-8 py-3 rounded-lg bg-[#4f9eff] text-[#080810] font-bold text-sm tracking-wide hover:bg-[#6fb0ff] transition-all duration-200 shadow-[0_0_20px_rgba(79,158,255,0.3)] hover:shadow-[0_0_30px_rgba(79,158,255,0.5)] text-center"
           style={{ fontFamily: "'Space Mono', monospace" }}>
           Download Resume
