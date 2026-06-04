@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 function Home() {
   return (
-    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 pt-24 pb-16 overflow-hidden text-center">
+    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 pt-24 pb-16 text-center" style={{ zIndex: -1 }}>
       <div className="absolute inset-0 -z-0 overflow-hidden pointer-events-none">
         <motion.div className="absolute top-1/4 left-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full"
           style={{ background: "radial-gradient(circle, rgba(79,158,255,0.08) 0%, transparent 70%)" }}

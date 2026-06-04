@@ -100,3 +100,14 @@ body::before {
   border-radius: 1px;
   margin-bottom: 24px;
 }
+
+section {
+  overflow: visible !important;
+  z-index: auto !important;
+}
+
+nav {
+  isolation: isolate;
+  z-index: 9999 !important;
+  background: #080810 !important;
+}
